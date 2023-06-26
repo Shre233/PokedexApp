@@ -411,4 +411,28 @@ body {
   cursor: pointer;
   color: white;
   text-decoration: none;
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+
+.About-Container{
+  background-color: white;
+  height: 50vh;
+  border-radius: 12px;
+}
+.heading-about{
+  text-align: center;
+  padding: 15px;
+  margin-top: -1.5%;
+}
+
+
+
+.common-about{
+  display: flex;
+  color:black;
+  gap:2vw;
+  font-size: 1.1rem;
+  justify-content: center;
 }

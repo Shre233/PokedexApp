@@ -17,6 +17,9 @@ function Info(props) {
   const [bg_type, setBG] = useState("");
   const [isAbout, setAbout] = useState(true);
   const [isStat, setStat] = useState(false);
+  const [height,setHeight]=useState(0);
+  const [weight,setWeight]=useState(0);
+  const [Ability,setAbility]=useState([]);
   useEffect(() => {
     axios.get(propsData.pokemon_url).then((res) => {
       setInfo(res.data);
@@ -24,6 +27,9 @@ function Info(props) {
       setBG(res.data.types[0].type.name);
       setImage(res.data.sprites.other["official-artwork"].front_default);
       setAltimg(res.data.sprites.other.dream_world.front_default);
+      setHeight(res.data.height);
+      setWeight(res.data.weight);
+      setAbility(res.data.abilities);
       setLoading(false);
     });
   }, [props.pokemon_url]);
@@ -58,7 +64,7 @@ function Info(props) {
             <h3>Stats</h3>
           </div>
         </div>
-        {isAbout && <About />}
+        {isAbout && <About bg_type={bg_type} height={height} weight={weight} Ability={Ability} Type={Type}  />}
         {isStat && <Stat/>}
       </div>
     </div>
