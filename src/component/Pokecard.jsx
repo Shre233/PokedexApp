@@ -49,7 +49,8 @@ function Pokecard(props) {
         </div>
         <div className=" Image Pokeball-bgimage"></div>
         <div className="Image">
-          <img className="Pokemon-image" src={Altimg} alt={Image} />
+          { Altimg && <img className="Pokemon-image" src={Altimg} alt="" />}
+          {!Altimg && <img className="Pokemon-image" src={Image} alt="" />}
         </div>
       </div>
     </div>

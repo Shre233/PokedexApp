@@ -10,7 +10,8 @@ function PokeCard_info(props) {
       <div className=" Image-info Pokeball-bgimage-info"></div>
       <div className={`Top-Container`}>
         <div className={`Pokemon-card-info`}>
-          <img className="Pokemon-image-info" src={props.Altimg} alt={props.Image} />
+          {props.Altimg && <img className="Pokemon-image-info" src={props.Altimg} alt="" />}
+          {!props.Altimg && <img className="Pokemon-image-info" src={props.Image} alt="" />}
           <div className="Pokemon-data">
             <div className="Pokemon-id Pokemon-id-info">#{props.info.id}</div>
             <div

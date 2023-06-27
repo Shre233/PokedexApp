@@ -20,6 +20,7 @@ function Info(props) {
   const [height,setHeight]=useState(0);
   const [weight,setWeight]=useState(0);
   const [Ability,setAbility]=useState([]);
+  const [Stats,setStats]=useState([]);
   useEffect(() => {
     axios.get(propsData.pokemon_url).then((res) => {
       setInfo(res.data);
@@ -30,6 +31,7 @@ function Info(props) {
       setHeight(res.data.height);
       setWeight(res.data.weight);
       setAbility(res.data.abilities);
+      setStats(res.data.stats)
       setLoading(false);
     });
   }, [props.pokemon_url]);
@@ -65,7 +67,7 @@ function Info(props) {
           </div>
         </div>
         {isAbout && <About bg_type={bg_type} height={height} weight={weight} Ability={Ability} Type={Type}  />}
-        {isStat && <Stat/>}
+        {isStat && <Stat Stats={Stats} />}
       </div>
     </div>
   );

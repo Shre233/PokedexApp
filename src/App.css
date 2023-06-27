@@ -416,12 +416,13 @@ body {
 }
 
 
-.About-Container{
+.About-Container {
   background-color: white;
   height: 50vh;
   border-radius: 12px;
 }
-.heading-about{
+
+.heading-about {
   text-align: center;
   padding: 15px;
   margin-top: -1.5%;
@@ -429,10 +430,64 @@ body {
 
 
 
-.common-about{
+/* .common-about{
   display: flex;
   color:black;
-  gap:2vw;
   font-size: 1.1rem;
   justify-content: center;
+} */
+
+.About-table {
+  font-size: 1.3rem;
+  color: black;
+  border-spacing: 0 2vh;
+  text-transform: capitalize;
+  margin-left: 28vw;
+}
+
+.about-th {
+  padding: 0 6.5vw 0 6.5vw;
+}
+
+.Stat-table {
+  font-size: 1.3rem;
+  border-spacing: 0 1vh;
+  text-transform: capitalize;
+  margin-left: 24vw;
+  width: 100%;
+  table-layout: fixed;
+  column-gap: 10px;
+}
+
+.stat-th{
+  text-align: left;
+}
+
+.range-slide {
+  width: 70%;
+  padding: 0;
+}
+
+.range-slide-fill {
+  position: relative;
+  height: 5px;
+  border-radius: 10px;
+  width: var(--precentage);
+  animation: fill 1s backwards;
+}
+.stat-th{
+  color:black
+}
+
+.range-slide-fill::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: currentColor;
+  border-radius: 100px;
+  animation: fill 1s backwards;
 }
