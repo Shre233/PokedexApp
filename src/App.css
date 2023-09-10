@@ -468,12 +468,19 @@ body {
   padding: 0;
 }
 
+@keyframes slide {
+  from {width: 0;}
+  to {width: var(--precentage);}
+}
+
+
 .range-slide-fill {
   position: relative;
   height: 5px;
   border-radius: 10px;
   width: var(--precentage);
-  animation: fill 1s backwards;
+  animation-name: slide;
+  animation-duration: 2s;
 }
 .stat-th{
   color:black
@@ -490,4 +497,61 @@ body {
   background: currentColor;
   border-radius: 100px;
   animation: fill 1s backwards;
+}
+
+button{
+  width: 100px;
+  padding: 5px;
+  margin-top:20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+.Button {
+  background: #fff;
+  color: royalblue;
+  border: 2px solid royalblue;
+  border-radius: 5px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  transition: color 400ms;
+}
+
+.Button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: royalblue;
+  z-index: -1;
+  transition: transform 400ms ease-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.Button:hover::before {
+ transform: scaleX(1);
+}
+
+.Button:hover {
+  color: #fff;
+}
+.PrevButton{
+  float:left;
+}
+.NextButton{
+  float:right;
+}
+
+.copyright{
+  margin-top: 100px;
+  margin-bottom: 0;
+  text-align: center;
 }

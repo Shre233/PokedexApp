@@ -42,10 +42,11 @@ function Home() {
           );
         })}
       </div>
-      <button disabled={prev == null} onClick={prevPage}>
+      <button className="Button PrevButton" disabled={prev == null} onClick={prevPage}>
         Prev
       </button>
-      <button onClick={nextPage}>Next</button>
+      <button className="Button NextButton" onClick={nextPage}>Next</button>
+        <p className="copyright">Made with ❤ by <a target="_blank" style={{textDecoration:"none"}} href="https://github.com/Shre233">Shreyansh Jain</a></p>
     </div>
   );
 }
