@@ -15,8 +15,8 @@ function Pokecard(props) {
       setInfo(res.data);
       setType(res.data.types);
       setBG(res.data.types[0].type.name);
-      setImage(res.data.sprites.other["official-artwork"].front_default);
-      setAltimg(res.data.sprites.other.dream_world.front_default);
+      setImage(`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${res.data.id}.svg`);
+      setAltimg(`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${res.data.id}.svg`);
       setLoading(false);
     });
   }, [props.pokemon_url]);
